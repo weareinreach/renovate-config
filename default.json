@@ -8,18 +8,24 @@
 		":rebaseStalePrs",
 		"group:allNonMajor"
 	],
-	"reviewers": ["team:inreach-admins"],
-	"semanticCommits": "enabled",
-	"rollbackPrs": true,
 	"lockFileMaintenance": {
-		"enabled": false,
-		"recreateClosed": true,
-		"rebaseStalePrs": true,
 		"branchTopic": "lock-file-maintenance",
 		"commitMessageAction": "Lock file maintenance",
-		"schedule": ["every two weeks"],
+		"enabled": false,
 		"prBodyDefinitions": {
 			"Change": "All locks refreshed"
+		},
+		"rebaseStalePrs": true,
+		"recreateClosed": true,
+		"schedule": ["every two weeks"]
+	},
+	"packageRules": [
+		{
+			"groupName": "Mantine monorepo",
+			"matchPackagePrefixes": ["@mantine"]
 		}
-	}
+	],
+	"reviewers": ["team:inreach-admins"],
+	"rollbackPrs": true,
+	"semanticCommits": "enabled"
 }
