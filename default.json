@@ -1,0 +1,25 @@
+{
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"addLabels": ["dependencies"],
+	"configMigration": true,
+	"extends": [
+		"config:base",
+		":preserveSemverRanges",
+		":rebaseStalePrs",
+		"group:allNonMajor"
+	],
+	"reviewers": ["team:inreach-admins"],
+	"semanticCommits": "enabled",
+	"rollbackPrs": true,
+	"lockFileMaintenance": {
+		"enabled": false,
+		"recreateClosed": true,
+		"rebaseStalePrs": true,
+		"branchTopic": "lock-file-maintenance",
+		"commitMessageAction": "Lock file maintenance",
+		"schedule": ["every two weeks"],
+		"prBodyDefinitions": {
+			"Change": "All locks refreshed"
+		}
+	}
+}
