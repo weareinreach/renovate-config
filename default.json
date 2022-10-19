@@ -3,7 +3,14 @@
 	"addLabels": ["dependencies"],
 	"configMigration": true,
 	"extends": [
-		"config:base",
+		":dependencyDashboard",
+		":semanticPrefixFixDepsChoreOthers",
+		":ignoreModulesAndTests",
+		":autodetectPinVersions",
+		":prHourlyLimit2",
+		":prConcurrentLimit10",
+		"group:monorepos",
+		"workarounds:all",
 		":preserveSemverRanges",
 		":rebaseStalePrs",
 		"group:allNonMajor"
@@ -25,7 +32,7 @@
 			"matchPackagePrefixes": ["@mantine"]
 		}
 	],
-	"reviewers": ["team:inreach-admins"],
+	"reviewersFromCodeOwners": true,
 	"rollbackPrs": true,
 	"semanticCommits": "enabled"
 }
