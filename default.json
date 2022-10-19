@@ -3,17 +3,21 @@
 	"addLabels": ["dependencies"],
 	"configMigration": true,
 	"extends": [
-		":dependencyDashboard",
-		":semanticPrefixFixDepsChoreOthers",
-		":ignoreModulesAndTests",
 		":autodetectPinVersions",
-		":prHourlyLimit2",
+		":dependencyDashboard",
+		":enableVulnerabilityAlerts",
+		":gitSignOff",
+		":ignoreModulesAndTests",
 		":prConcurrentLimit10",
-		"group:monorepos",
-		"workarounds:all",
+		":prHourlyLimit2",
 		":preserveSemverRanges",
 		":rebaseStalePrs",
-		"group:allNonMajor"
+		":semanticPrefixFixDepsChoreOthers",
+		"group:monorepos",
+		"group:allNonMajor",
+		"group:recommended",
+		"replacements:all",
+		"workarounds:all"
 	],
 	"lockFileMaintenance": {
 		"branchTopic": "lock-file-maintenance",
@@ -30,6 +34,11 @@
 		{
 			"groupName": "Mantine monorepo",
 			"matchPackagePrefixes": ["@mantine"]
+		},
+		{
+			"major": {
+				"dependencyDashboardApproval": true
+			}
 		}
 	],
 	"reviewersFromCodeOwners": true,
