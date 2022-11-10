@@ -10,19 +10,21 @@
 		":ignoreModulesAndTests",
 		":prConcurrentLimit10",
 		":prHourlyLimit2",
-		":preserveSemverRanges",
+		":pinAllExceptPeerDependencies",
 		":rebaseStalePrs",
 		":semanticPrefixFixDepsChoreOthers",
 		"group:monorepos",
 		"group:allNonMajor",
 		"group:recommended",
+		"helpers:disableTypesNodeMajor",
+		"helpers:pinGitHubActionDigests",
 		"replacements:all",
 		"workarounds:all"
 	],
 	"lockFileMaintenance": {
 		"branchTopic": "lock-file-maintenance",
 		"commitMessageAction": "Lock file maintenance",
-		"enabled": false,
+		"enabled": true,
 		"prBodyDefinitions": {
 			"Change": "All locks refreshed"
 		},
@@ -39,6 +41,13 @@
 			"major": {
 				"dependencyDashboardApproval": true
 			}
+		},
+		{
+			"matchManagers": ["github-actions"],
+			"major": {
+				"dependencyDashboardApproval": false
+			},
+			"groupName": "GitHub Actions"
 		}
 	],
 	"reviewersFromCodeOwners": true,
