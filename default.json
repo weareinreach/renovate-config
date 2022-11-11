@@ -48,6 +48,10 @@
 				"dependencyDashboardApproval": false
 			},
 			"groupName": "GitHub Actions"
+		},
+		{
+			"matchPackageNames": ["aws-sdk"],
+			"schedule": ["before 9am on monday"]
 		}
 	],
 	"reviewersFromCodeOwners": true,
