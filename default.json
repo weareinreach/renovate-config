@@ -30,7 +30,7 @@
 		},
 		"rebaseStalePrs": true,
 		"recreateClosed": true,
-		"schedule": ["every two weeks"]
+		"schedule": ["on the 2nd and 4th week of the month"]
 	},
 	"packageRules": [
 		{
