@@ -30,7 +30,7 @@
 		},
 		"rebaseStalePrs": true,
 		"recreateClosed": true,
-		"schedule": ["on the 2nd and 4th week of the month"]
+		"schedule": ["0 12 1,15 * *"]
 	},
 	"packageRules": [
 		{
