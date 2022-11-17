@@ -34,9 +34,22 @@
 	},
 	"packageRules": [
 		{
-			"groupName": "Mantine monorepo",
-			"matchPackagePrefixes": ["@mantine"],
+			"groupName": "Mantine & related",
+			"matchPackagePrefixes": [
+				"@mantine",
+				"dayjs",
+				"@tabler/icons",
+				"@tiptap",
+				"embla-carousel-react",
+				"@emotion",
+				"@iconify"
+			],
 			"matchUpdateTypes": ["major"]
+		},
+		{
+			"groupName": "Next.js",
+			"matchSourceUrlPrefixes": ["https://github.com/vercel/next.js"],
+			"matchUpdateTypes": ["major", "minor", "patch"]
 		},
 		{
 			"major": {
