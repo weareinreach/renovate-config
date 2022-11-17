@@ -30,7 +30,7 @@
 		},
 		"rebaseStalePrs": true,
 		"recreateClosed": true,
-		"schedule": ["0 12 1,15 * *"]
+		"schedule": ["* 12 1,15 * *"]
 	},
 	"packageRules": [
 		{
