@@ -35,7 +35,8 @@
 	"packageRules": [
 		{
 			"groupName": "Mantine monorepo",
-			"matchPackagePrefixes": ["@mantine"]
+			"matchPackagePrefixes": ["@mantine"],
+			"matchUpdateTypes": ["major"]
 		},
 		{
 			"major": {
