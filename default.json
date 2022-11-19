@@ -67,6 +67,10 @@
 		{
 			"matchPackageNames": ["aws-sdk"],
 			"schedule": ["before 9am on monday"]
+		},
+		{
+			"matchPackagePrefixes": ["@weareinreach"],
+			"enabled": false
 		}
 	],
 	"platformCommit": true,
