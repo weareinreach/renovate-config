@@ -21,6 +21,7 @@
 		"replacements:all",
 		"workarounds:all"
 	],
+	"dependencyDashboardLabels": ["no-stale"],
 	"lockFileMaintenance": {
 		"branchTopic": "lock-file-maintenance",
 		"commitMessageAction": "Lock file maintenance",
@@ -68,7 +69,10 @@
 			"schedule": ["before 9am on monday"]
 		}
 	],
+	"platformCommit": true,
 	"reviewersFromCodeOwners": true,
 	"rollbackPrs": true,
-	"semanticCommits": "enabled"
+	"semanticCommits": "enabled",
+	"transitiveRemediation": true,
+	"updateInternalDeps": true
 }
