@@ -33,6 +33,7 @@
 		"recreateClosed": true,
 		"schedule": ["* 12 1,15 * *"]
 	},
+	"osvVulnerabilityAlerts": true,
 	"packageRules": [
 		{
 			"groupName": "Mantine & related",
@@ -74,9 +75,13 @@
 		}
 	],
 	"platformCommit": true,
+	"postUpdateOptions": ["pnpmDedupe"],
 	"reviewersFromCodeOwners": true,
 	"rollbackPrs": true,
 	"semanticCommits": "enabled",
 	"transitiveRemediation": true,
-	"updateInternalDeps": true
+	"updateInternalDeps": true,
+	"vulnerabilityAlerts": {
+		"labels": ["security"]
+	}
 }
