@@ -33,6 +33,8 @@
 		"recreateClosed": true,
 		"schedule": ["* 12 1,15 * *"]
 	},
+	"npmrc": "ignore-scripts=true\nignore-dep-scripts=true",
+	"npmrcMerge": true,
 	"osvVulnerabilityAlerts": true,
 	"packageRules": [
 		{
