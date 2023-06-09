@@ -15,10 +15,7 @@
 		":rebaseStalePrs",
 		":semanticPrefixFixDepsChoreOthers",
 		"group:monorepos",
-		"group:allNonMajor",
-		"group:recommended",
 		"helpers:disableTypesNodeMajor",
-		"helpers:pinGitHubActionDigests",
 		"replacements:all",
 		"workarounds:all"
 	],
@@ -37,6 +34,12 @@
 	"npmrcMerge": true,
 	"osvVulnerabilityAlerts": true,
 	"packageRules": [
+		{
+			"groupName": "all non-major dependencies",
+			"groupSlug": "all-minor-patch",
+			"matchPackagePatterns": ["*", "@types/react"],
+			"matchUpdateTypes": ["minor", "patch"]
+		},
 		{
 			"groupName": "Mantine & related",
 			"matchPackageNames": ["embla-carousel-react"],
@@ -81,7 +84,9 @@
 			"major": {
 				"dependencyDashboardApproval": false
 			},
-			"matchManagers": ["github-actions"]
+			"matchDepTypes": ["actions"],
+			"matchManagers": ["github-actions"],
+			"pinDigests": true
 		},
 		{
 			"matchPackageNames": ["aws-sdk"],
@@ -90,6 +95,10 @@
 		{
 			"enabled": false,
 			"matchPackagePrefixes": ["@weareinreach"]
+		},
+		{
+			"groupName": "Docker containers",
+			"matchManagers": ["docker-compose"]
 		}
 	],
 	"platformCommit": true,
