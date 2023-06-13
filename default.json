@@ -84,7 +84,7 @@
 			"major": {
 				"dependencyDashboardApproval": false
 			},
-			"matchDepTypes": ["actions"],
+			"matchDepTypes": ["actions", "action"],
 			"matchManagers": ["github-actions"],
 			"pinDigests": true
 		},
