@@ -99,11 +99,6 @@
 		{
 			"groupName": "Docker containers",
 			"matchManagers": ["docker-compose"]
-		},
-		{
-			"groupName": "Prisma",
-			"matchPackagePrefixes": ["@prisma"],
-			"matchSourceUrls": ["https://github.com/prisma/prisma"]
 		}
 	],
 	"platformCommit": true,
