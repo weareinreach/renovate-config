@@ -99,6 +99,12 @@
 		{
 			"groupName": "Docker containers",
 			"matchManagers": ["docker-compose"]
+		},
+		{
+			"enabled": false,
+			"groupName": "Ignore msw v1.2.4",
+			"matchCurrentVersion": "1.2.4",
+			"matchPackageNames": ["msw"]
 		}
 	],
 	"platformCommit": true,
