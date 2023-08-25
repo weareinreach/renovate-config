@@ -4,7 +4,6 @@
 	"configMigration": true,
 	"dependencyDashboardLabels": ["no-stale"],
 	"extends": [
-		":autodetectPinVersions",
 		":dependencyDashboard",
 		":enableVulnerabilityAlerts",
 		":gitSignOff",
@@ -19,6 +18,7 @@
 		"replacements:all",
 		"workarounds:all"
 	],
+	"ignoreScripts": true,
 	"lockFileMaintenance": {
 		"branchTopic": "lock-file-maintenance",
 		"commitMessageAction": "Lock file maintenance",
@@ -26,8 +26,8 @@
 		"prBodyDefinitions": {
 			"Change": "All locks refreshed"
 		},
-		"rebaseStalePrs": true,
-		"recreateClosed": true,
+		"rebaseWhen": "behind-base-branch",
+		"recreateWhen": "always",
 		"schedule": ["* 12 1,15 * *"]
 	},
 	"npmrc": "ignore-scripts=true\nignore-dep-scripts=true",
@@ -43,6 +43,7 @@
 		{
 			"groupName": "Mantine & related",
 			"matchPackageNames": ["embla-carousel-react"],
+			"matchPackagePatterns": [".*mantine.*"],
 			"matchPackagePrefixes": [
 				"@mantine",
 				"@tabler/icons",
