@@ -6,10 +6,10 @@ settings:
 
 dependencies:
   husky:
-    specifier: ^8.0.3
+    specifier: 8.0.3
     version: 8.0.3
   renovate:
-    specifier: ^36.64.0
+    specifier: 36.64.0
     version: 36.64.0(typanion@3.14.0)
 
 packages:
