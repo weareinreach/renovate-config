@@ -35,6 +35,12 @@
 	"osvVulnerabilityAlerts": true,
 	"packageRules": [
 		{
+			"enabled": false,
+			"groupName": "Ignore msw v1.2.4",
+			"matchCurrentVersion": "1.2.4",
+			"matchPackageNames": ["msw"]
+		},
+		{
 			"groupName": "all non-major dependencies",
 			"groupSlug": "all-minor-patch",
 			"matchPackagePatterns": ["*", "@types/react"],
@@ -100,12 +106,6 @@
 		{
 			"groupName": "Docker containers",
 			"matchManagers": ["docker-compose"]
-		},
-		{
-			"enabled": false,
-			"groupName": "Ignore msw v1.2.4",
-			"matchCurrentVersion": "1.2.4",
-			"matchPackageNames": ["msw"]
 		}
 	],
 	"platformCommit": true,
