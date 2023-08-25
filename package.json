@@ -12,7 +12,7 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
-		"husky": "^8.0.3",
-		"renovate": "^36.64.0"
+		"husky": "8.0.3",
+		"renovate": "36.64.0"
 	}
 }
