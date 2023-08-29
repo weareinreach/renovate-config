@@ -6,7 +6,8 @@
 	"main": "default.json",
 	"scripts": {
 		"prepare": "husky install",
-		"validate-config": "renovate-config-validator --strict default.json"
+		"validate-config": "renovate-config-validator --strict default.json",
+		"lint:staged": "lint-staged"
 	},
 	"keywords": [],
 	"author": "",
@@ -14,5 +15,11 @@
 	"dependencies": {
 		"husky": "8.0.3",
 		"renovate": "36.64.0"
+	},
+	"devDependencies": {
+		"lint-staged": "^14.0.1"
+	},
+	"lint-staged": {
+		"{renovate,default}.json": "renovate-config-validator --strict"
 	}
 }
