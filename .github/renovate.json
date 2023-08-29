@@ -1,5 +1,25 @@
 {
-	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"baseBranches": ["main"],
-	"extends": ["github>weareinreach/renovate-config"]
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "baseBranches": [
+        "main"
+    ],
+    "extends": [
+        "github>weareinreach/renovate-config"
+    ],
+    "packageRules": [
+        {
+            "major": {
+                "dependencyDashboardApproval": false
+            }
+        },
+        {
+            "automerge": true,
+            "matchPackagePatterns": [
+                "*"
+            ],
+            "schedule": [
+                "* 18 1,11,21 * *"
+            ]
+        }
+    ]
 }
