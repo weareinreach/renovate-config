@@ -14,7 +14,7 @@ dependencies:
 
 devDependencies:
   lint-staged:
-    specifier: ^14.0.1
+    specifier: 14.0.1
     version: 14.0.1
 
 packages:
