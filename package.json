@@ -14,7 +14,7 @@
 	"license": "ISC",
 	"dependencies": {
 		"husky": "8.0.3",
-		"renovate": "37.12.1"
+		"renovate": "37.29.0"
 	},
 	"devDependencies": {
 		"lint-staged": "14.0.1"
