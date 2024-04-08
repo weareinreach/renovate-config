@@ -1,115 +1,163 @@
 {
-	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"addLabels": ["dependencies", "automerge"],
-	"configMigration": true,
-	"dependencyDashboardLabels": ["no-stale"],
-	"extends": [
-		":dependencyDashboard",
-		":enableVulnerabilityAlerts",
-		":gitSignOff",
-		":ignoreModulesAndTests",
-		":prConcurrentLimit10",
-		":prHourlyLimit2",
-		":pinAllExceptPeerDependencies",
-		":rebaseStalePrs",
-		":semanticPrefixFixDepsChoreOthers",
-		"group:monorepos",
-		"helpers:disableTypesNodeMajor",
-		"replacements:all",
-		"workarounds:all"
-	],
-	"ignoreScripts": true,
-	"lockFileMaintenance": {
-		"branchTopic": "lock-file-maintenance",
-		"commitMessageAction": "Lock file maintenance",
-		"enabled": true,
-		"prBodyDefinitions": {
-			"Change": "All locks refreshed"
-		},
-		"rebaseWhen": "behind-base-branch",
-		"recreateWhen": "always",
-		"schedule": ["* 12 1,15 * *"]
-	},
-	"npmrc": "ignore-scripts=true\nignore-dep-scripts=true",
-	"npmrcMerge": true,
-	"osvVulnerabilityAlerts": true,
-	"packageRules": [
-		{
-			"groupName": "all non-major dependencies",
-			"groupSlug": "all-minor-patch",
-			"matchPackagePatterns": ["*", "@types/react"],
-			"matchUpdateTypes": ["minor", "patch"]
-		},
-		{
-			"groupName": "Mantine & related",
-			"matchPackageNames": ["embla-carousel-react"],
-			"matchPackagePatterns": [".*mantine.*"],
-			"matchPackagePrefixes": [
-				"@mantine",
-				"@tabler/icons",
-				"@tiptap",
-				"@emotion",
-				"@iconify",
-				"@iconify-json"
-			],
-			"matchUpdateTypes": ["major"]
-		},
-		{
-			"groupName": "Storybook & related",
-			"matchPackageNames": [
-				"react-docgen-typescript",
-				"css-chaos-addon",
-				"chromatic",
-				"@tomfreudenberg/next-auth-mock"
-			],
-			"matchPackagePatterns": [".*storybook.*"],
-			"matchUpdateTypes": ["major"]
-		},
-		{
-			"groupName": "Next.js",
-			"matchSourceUrlPrefixes": ["https://github.com/vercel/next.js"],
-			"matchUpdateTypes": ["major", "minor", "patch"]
-		},
-		{
-			"groupName": "i18next",
-			"matchPackagePatterns": [".*i18next.*"],
-			"matchUpdateTypes": ["major"]
-		},
-		{
-			"major": {
-				"dependencyDashboardApproval": true
-			}
-		},
-		{
-			"groupName": "GitHub Actions",
-			"major": {
-				"dependencyDashboardApproval": false
-			},
-			"matchDepTypes": ["actions", "action"],
-			"matchManagers": ["github-actions"],
-			"pinDigests": true
-		},
-		{
-			"matchPackageNames": ["aws-sdk"],
-			"schedule": ["before 9am on monday"]
-		},
-		{
-			"enabled": false,
-			"matchPackagePrefixes": ["@weareinreach"]
-		},
-		{
-			"groupName": "Docker containers",
-			"matchManagers": ["docker-compose"]
-		}
-	],
-	"platformCommit": true,
-	"postUpdateOptions": ["pnpmDedupe"],
-	"reviewersFromCodeOwners": true,
-	"rollbackPrs": true,
-	"semanticCommits": "enabled",
-	"transitiveRemediation": true,
-	"updateInternalDeps": true,
-	"vulnerabilityAlerts": {
-		"labels": ["security"]
-	}
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "addLabels": [
+        "dependencies",
+        "automerge"
+    ],
+    "configMigration": true,
+    "dependencyDashboardLabels": [
+        "no-stale"
+    ],
+    "extends": [
+        ":dependencyDashboard",
+        ":enableVulnerabilityAlerts",
+        ":gitSignOff",
+        ":ignoreModulesAndTests",
+        ":prConcurrentLimit10",
+        ":prHourlyLimit2",
+        ":pinAllExceptPeerDependencies",
+        ":rebaseStalePrs",
+        ":semanticPrefixFixDepsChoreOthers",
+        "group:monorepos",
+        "helpers:disableTypesNodeMajor",
+        "replacements:all",
+        "workarounds:all"
+    ],
+    "ignoreScripts": true,
+    "lockFileMaintenance": {
+        "branchTopic": "lock-file-maintenance",
+        "commitMessageAction": "Lock file maintenance",
+        "enabled": true,
+        "prBodyDefinitions": {
+            "Change": "All locks refreshed"
+        },
+        "rebaseWhen": "behind-base-branch",
+        "recreateWhen": "always",
+        "schedule": [
+            "* 12 1,15 * *"
+        ]
+    },
+    "npmrc": "ignore-scripts=true\nignore-dep-scripts=true",
+    "npmrcMerge": true,
+    "osvVulnerabilityAlerts": true,
+    "packageRules": [
+        {
+            "groupName": "all non-major dependencies",
+            "groupSlug": "all-minor-patch",
+            "matchPackagePatterns": [
+                "*",
+                "@types/react"
+            ],
+            "matchUpdateTypes": [
+                "minor",
+                "patch"
+            ]
+        },
+        {
+            "groupName": "Mantine & related",
+            "matchPackagePatterns": [
+                ".*mantine.*",
+                "embla-carousel-.*"
+            ],
+            "matchPackagePrefixes": [
+                "@mantine",
+                "@tabler/icons",
+                "@tiptap",
+                "@emotion",
+                "@iconify",
+                "@iconify-json"
+            ],
+            "matchUpdateTypes": [
+                "major"
+            ]
+        },
+        {
+            "groupName": "Storybook & related",
+            "matchPackageNames": [
+                "react-docgen-typescript",
+                "css-chaos-addon",
+                "chromatic",
+                "@tomfreudenberg/next-auth-mock"
+            ],
+            "matchPackagePatterns": [
+                ".*storybook.*"
+            ],
+            "matchUpdateTypes": [
+                "major"
+            ]
+        },
+        {
+            "groupName": "Next.js",
+            "matchSourceUrlPrefixes": [
+                "https://github.com/vercel/next.js"
+            ],
+            "matchUpdateTypes": [
+                "major",
+                "minor",
+                "patch"
+            ]
+        },
+        {
+            "groupName": "i18next",
+            "matchPackagePatterns": [
+                ".*i18next.*"
+            ],
+            "matchUpdateTypes": [
+                "major"
+            ]
+        },
+        {
+            "major": {
+                "dependencyDashboardApproval": true
+            }
+        },
+        {
+            "groupName": "GitHub Actions",
+            "major": {
+                "dependencyDashboardApproval": false
+            },
+            "matchDepTypes": [
+                "actions",
+                "action"
+            ],
+            "matchManagers": [
+                "github-actions"
+            ],
+            "pinDigests": true
+        },
+        {
+            "matchPackageNames": [
+                "aws-sdk"
+            ],
+            "schedule": [
+                "before 9am on monday"
+            ]
+        },
+        {
+            "enabled": false,
+            "matchPackagePrefixes": [
+                "@weareinreach"
+            ]
+        },
+        {
+            "groupName": "Docker containers",
+            "matchManagers": [
+                "docker-compose"
+            ]
+        }
+    ],
+    "platformCommit": true,
+    "postUpdateOptions": [
+        "pnpmDedupe"
+    ],
+    "reviewersFromCodeOwners": true,
+    "rollbackPrs": true,
+    "semanticCommits": "enabled",
+    "transitiveRemediation": true,
+    "updateInternalDeps": true,
+    "vulnerabilityAlerts": {
+        "labels": [
+            "security"
+        ]
+    }
 }
