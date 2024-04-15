@@ -9,18 +9,22 @@
         "no-stale"
     ],
     "extends": [
+        ":approveMajorUpdates",
         ":dependencyDashboard",
         ":enableVulnerabilityAlerts",
         ":gitSignOff",
         ":ignoreModulesAndTests",
+        ":pinVersions",
         ":prConcurrentLimit10",
-        ":prHourlyLimit2",
-        ":pinAllExceptPeerDependencies",
+        ":prImmediately",
         ":rebaseStalePrs",
+        ":renovatePrefix",
         ":semanticPrefixFixDepsChoreOthers",
         "group:monorepos",
+        "group:recommended",
         "helpers:disableTypesNodeMajor",
         "replacements:all",
+        "security:openssf-scorecard",
         "workarounds:all"
     ],
     "ignoreScripts": true,
@@ -107,11 +111,6 @@
             ]
         },
         {
-            "major": {
-                "dependencyDashboardApproval": true
-            }
-        },
-        {
             "groupName": "GitHub Actions",
             "major": {
                 "dependencyDashboardApproval": false
@@ -156,6 +155,7 @@
     "transitiveRemediation": true,
     "updateInternalDeps": true,
     "vulnerabilityAlerts": {
+        "enabled": true,
         "labels": [
             "security"
         ]
