@@ -77,7 +77,7 @@
         },
         {
             "groupName": "Storybook & related",
-            "matchPackageNames": [
+            "matchDepNames": [
                 "react-docgen-typescript",
                 "css-chaos-addon",
                 "chromatic",
@@ -125,7 +125,7 @@
             "pinDigests": true
         },
         {
-            "matchPackageNames": [
+            "matchDepNames": [
                 "aws-sdk"
             ],
             "schedule": [
