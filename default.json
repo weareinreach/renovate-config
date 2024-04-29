@@ -14,7 +14,7 @@
         ":enableVulnerabilityAlerts",
         ":gitSignOff",
         ":ignoreModulesAndTests",
-        ":pinVersions",
+        ":pinAllExceptPeerDependencies",
         ":prConcurrentLimit10",
         ":prImmediately",
         ":rebaseStalePrs",
