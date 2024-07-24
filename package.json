@@ -14,10 +14,10 @@
 	"license": "ISC",
 	"dependencies": {
 		"husky": "8.0.3",
-		"renovate": "37.323.0"
+		"renovate": "37.440.7"
 	},
 	"devDependencies": {
-		"lint-staged": "15.2.2"
+		"lint-staged": "15.2.7"
 	},
 	"lint-staged": {
 		"{renovate,default}.json": "renovate-config-validator --strict"
