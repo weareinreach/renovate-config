@@ -111,6 +111,15 @@
             ]
         },
         {
+            "groupName": "eslint",
+            "matchPackagePatterns": [
+                ".*eslint.*"
+            ],
+            "matchUpdateTypes": [
+                "major"
+            ]
+        },
+        {
             "groupName": "GitHub Actions",
             "major": {
                 "dependencyDashboardApproval": false
