@@ -14,11 +14,11 @@
         },
         {
             "automerge": true,
-            "matchPackagePatterns": [
-                "*"
-            ],
             "schedule": [
                 "* 18 1,11,21 * *"
+            ],
+            "matchPackageNames": [
+                "*"
             ]
         }
     ]
